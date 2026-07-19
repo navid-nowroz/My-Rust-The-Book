@@ -1,24 +1,20 @@
+use std::io;
+
 fn main() {
-    let guess: u32 = "42".parse().expect("Not a number!");
+    let a = [1, 2, 3, 4, 5];
 
-    let x = 2.0; // f64
+    println!("Please enter an array index.");
 
-    let y: f32 = 3.0; // f32
+    let mut index = String::new();
 
-    //addition 
-    let sum = 5 + 10;
-    
-    // subtraction
-    let difference = 95.5 - 4.3;
+    io::stdin().read_line(&mut index).expect("Failed to read line");
 
-    // multiplication
-    let product = 4 * 30;
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
 
-    // division
-    let quotient = 56.7 / 32.2;
-    let truncated = -5 / 3; // Results in -1
+    let element = a[index];
 
-    // remainder
-    let remainder = 43.5;
-
+    println!("The value of the element at index {index} is {element}");
 }
