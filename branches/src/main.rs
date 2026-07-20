@@ -1,13 +1,15 @@
 use std::io;
 
 fn main() {
-    println!("Please a number to see if it's less than 5");
+    println!("Please enter a number to compare to 5");
     let number: i32 = get_number();
 
     if number < 5 {
         println!("The number is less than 5.");
+    } else if number == 5 {
+        println!("The number is equal to 5");
     } else {
-        println!("The number is not less than 5");
+        println!("The number is grater than 5")
     }
 }
 
