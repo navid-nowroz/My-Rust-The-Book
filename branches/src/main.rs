@@ -1,31 +1,28 @@
 use std::io;
 
 fn main() {
-    let number: i32 = take_input();
+    println!("Please a number to see if it's less than 5");
+    let number: i32 = get_number();
 
     if number < 5 {
-        println!("condition was true");
+        println!("The number is less than 5.");
     } else {
-        println!("condition was false");
+        println!("The number is not less than 5");
     }
 }
 
-fn take_input() -> i32 {
+fn get_number() -> i32 {
     let mut input = String::new();
-    
-    println!("Please enter a number to see if it's smaller than 5:");
 
     io::stdin().read_line(&mut input)
-        .expect("Failed to read line");
+        .expect("Please enter a valid integer");
 
-    // Parse the input string into an integer
     let number: i32 = match input.trim().parse() {
         Ok(num) => num,
         Err(_) => {
             println!("Please enter a valid integer.");
-            take_input()
+            get_number()
         }
     };
-
-    number
+    number 
 }
