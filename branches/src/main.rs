@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     let number = 3;
 
@@ -6,4 +8,15 @@ fn main() {
     } else {
         println!("condition was false");
     }
+}
+
+fn take_input() -> i32 {
+    let mut input = String::new();
+
+    println!("please enter the number here to see if it's smaller than 5");
+
+    io::stdin().read_line(&mut input)
+        .expect("Please enter a valid integer");
+
+    input
 }
