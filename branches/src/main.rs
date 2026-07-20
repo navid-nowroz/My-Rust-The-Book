@@ -11,7 +11,7 @@ fn main() {
 }
 
 fn take_input() -> i32 {
-    let mut input = String::new();
+    let mut input: i32 = String::new().parse();
 
     println!("please enter the number here to see if it's smaller than 5");
 
