@@ -18,5 +18,6 @@ fn take_input() -> i32 {
     io::stdin().read_line(&mut input)
         .expect("Please enter a valid integer");
 
-    let input: i32 = input.trim().parse()
+    let input: i32 = input.trim().parse();
+    input
 }
