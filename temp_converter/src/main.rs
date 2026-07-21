@@ -5,7 +5,7 @@ fn main() {
     println!("Selected mode: {mode}");
 }
 
-fn Fahrenheit_Or_Celsius() {
+fn Fahrenheit_Or_Celsius() -> &'static str{
     // Printing the header info
     println!("This is a simple rust based app to convert temperature developed by Twoki.")
     println!("Give the number 1 as input if you want to convert from Fahrenheit to Celsius.");
