@@ -8,13 +8,16 @@ fn main() {
     println!("Selected mode: {mode}");
     match mode.trim() {
         FTC => {
-            let temperature: &64 = get_temp();
-            fahrenheit_to_celsius(temperature);
+            let temperature: f64 = get_temp();
+            let celsius = fahrenheit_to_celsius(temperature);
+            println!("{temperature} degrees fahrenheit equals to {celsius} degrees celsius.");
         },
         CTF => {
-            let temperature: &64 = get_temp();
-            celsius_to_fahrenheit(temperature);
-        }
+            let temperature: f64 = get_temp();
+            let fahrenheit = celsius_to_fahrenheit(temperature);
+            println!("{temperature} degrees celsius equals to {fahrenheit} degrees fahrenheit.");
+        },
+        _ => main(),
     }
 }
 
@@ -68,4 +71,16 @@ fn get_temp() -> f64 {
         }
     }
     number
+}
+
+// converts fahrenheit to celcius
+fn fahrenheit_to_celsius(temp_in: f64) -> f64 {
+    let temp_out = (temp_in - 32.0)*(5.0/9.0);
+    temp_out
+}
+
+// converts celsius to fahrenheit
+fn celsius_to_fahrenheit(temp_in: f64) -> f64 {
+    let temp_out = (temp_in * (9.0/5.0)) + 32.0;
+    temp_out
 }
