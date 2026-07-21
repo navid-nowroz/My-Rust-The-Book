@@ -12,7 +12,7 @@ fn main() {
             if count == 2 {
                 break 'counting_up;
             }
-            remianing -= 1;
+            remaining -= 1;
         }
 
         count += 1;
