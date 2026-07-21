@@ -3,6 +3,7 @@ use std::io::(self, Write);
 fn main() {
     println!("Give the nth position of the number in fibonacci series.");
     let mut n: i32 = get_number();
+    let result: i32 = fibonacci(n);
 }
 
 
@@ -22,4 +23,18 @@ fn get_number() -> i32 {
         }
     };
     number
+}
+
+fn fibonacci(n: i32) -> i32 {
+    let mut a = 0;
+    let mut b = 1;
+    let mut index = 0;
+    
+    while index < n {
+        let mut temp = a + b;
+        a = b;
+        b = temp;
+        index += 1;
+    }
+    a
 }
