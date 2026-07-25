@@ -1,9 +1,17 @@
 fn main() {
-    let rect1 = (30, 50);
+    struct Rectangle {
+        height: usize,
+        width: usize,
+    }
 
-    println!("The are of a rectangle is {} square pixels.", area(rect1));
+    let rect1 = Rectangle {
+        height: 30,
+        width: 50
+    };
+
+    println!("The are of a rectangle is {} square pixels.", area(&rect1));
 }
 
-fn area(dimensions: (usize, usize)) -> usize {
-    dimensions.0 * dimensions.1
+fn area(rectangle: Rectangle) -> usize {
+    rectangle.height * rectangle.width
 }
