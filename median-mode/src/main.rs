@@ -36,11 +36,11 @@ fn get_median(vector: &Vec<i32>) -> i32 {
     let median :i32 = match length % 2 {
         0 => {
             let med_point :usize = (length/2) as usize;
-            let result :i32 = (data[med_point] + data[med_point + 1]) / 2;
+            let result :i32 = (data[med_point - 1] + data[med_point]) / 2;
             result
         },
         _ => {
-            let med_point :usize = ((length/2) + 1) as usize;
+            let med_point :usize = ((length - 1)/2) as usize;
             data[med_point]
         }
     };
