@@ -1,7 +1,12 @@
 use std::io;
+use std::collections::HashMap;
 
 fn main() {
-    let mut vector: Vec<i32> = take_vector();
+    let vector: Vec<i32> = take_vector();
+    let median :i32 = get_median(&vector);
+    let mode :i32 = get_mode(&vector);
+    println!("Median: {median}, Mode: {mode}");
+
 }
 
 
@@ -38,5 +43,28 @@ fn get_median(vector: &Vec<i32>) -> i32 {
             let med_point :usize = ((length/2) + 1) as usize;
             data[med_point]
         }
+    };
+    median
+}
+
+fn get_mode(vector :&Vec<i32>) -> i32 {
+    let data :Vec<i32> = vector.clone();
+    let mut map:HashMap<i32, i32> = HashMap::new();
+
+    for number in &data {
+        let count = map.entry(*number).or_insert(0);
+        *count += 1;
     }
+
+    let mut big :i32 = 0;
+    let mut return_value :i32 = 0;
+    for (key, value) in map {
+       if value > big {
+           big = value;
+           return_value = key;
+       } else {
+           continue;
+       }
+    }
+    return_value
 }
