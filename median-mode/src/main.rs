@@ -22,10 +22,21 @@ fn take_vector() -> Vec<i32> {
     numbers
 }
 
+
 fn get_median(vector: &Vec<i32>) -> i32 {
     let mut data: Vec<i32> = vector.clone();
+    data.sort();
     let length :i32 = data.len() as i32;
 
-    data.sort();
-    80
+    let median :i32 = match length % 2 {
+        0 => {
+            let med_point :usize = (length/2) as usize;
+            let result :i32 = (data[med_point] + data[med_point + 1]) / 2;
+            result
+        },
+        _ => {
+            let med_point :usize = ((length/2) + 1) as usize;
+            data[med_point]
+        }
+    }
 }
