@@ -10,7 +10,7 @@ fn get_string() -> String {
     println!("Please enter the string that you want to convert here. ");
     let mut input :String = String::new();
     io::stdin().read_line(&mut input).expect("Failed to read line");
-    input
+    input.trim().to_string()
 }
 
 fn piggify(string :&String) -> String {
