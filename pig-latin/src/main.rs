@@ -1,7 +1,9 @@
 use std::io;
 
 fn main() {
-
+    let input :String = get_string();
+    let pig :String = piggify(&input);
+    println!("{pig}");
 }
 
 fn get_string() -> String {
