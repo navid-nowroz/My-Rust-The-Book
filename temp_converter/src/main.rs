@@ -73,13 +73,13 @@ fn get_temp() -> f64 {
     number
 }
 
-// converts fahrenheit to celcius
+// converts Fahrenheit to Celsius
 fn fahrenheit_to_celsius(temp_in: f64) -> f64 {
     let temp_out = (temp_in - 32.0)*(5.0/9.0);
     temp_out
 }
 
-// converts celsius to fahrenheit
+// converts Celsius to Fahrenheit
 fn celsius_to_fahrenheit(temp_in: f64) -> f64 {
     let temp_out = (temp_in * (9.0/5.0)) + 32.0;
     temp_out
