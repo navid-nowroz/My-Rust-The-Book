@@ -19,7 +19,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[should_panic(expected = "less than or equal to 100")]
+    #[should_panic(expected = "greater than or equal to 100")]
     fn greater_than_100() {
         Guess::new(200);
     }
