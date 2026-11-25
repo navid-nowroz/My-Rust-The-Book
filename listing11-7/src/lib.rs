@@ -1,5 +1,5 @@
-pub fn add(a: u64) -> u64 {
-    a + 3
+pub fn greeting(name: &str) -> String {
+    format!("Hello!")
 }
 
 #[cfg(test)]
@@ -7,8 +7,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_adds_two() {
-        let result = add(2);
-        assert_eq!(result, 4);
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(
+            result.contains("Carol"),
+            "Greeting did not contain name, value was `{result}`"
+        );
     }
 }
