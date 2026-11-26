@@ -14,6 +14,6 @@ mod tests {
             Safe, fast, productive.
             Pick three.";
 
-        assert_eq!(vec!["safe, fast, productive."], search(query, contests));
+        assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
 }
